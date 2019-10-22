@@ -1,6 +1,6 @@
 ///////////////////////////////////////
 // Lecture: Hoisting
-
+/* 
 calculateAge(1988);
 
 function  calculateAge(year){
@@ -13,12 +13,17 @@ age(1988);
 var age = function (year){
     console.log(2019 - year);
 }
-
-console.log(age);
+ */
+/* console.log(age);
 var age = 31;
 
+function anyname(){
+    var age = 35;
+    console.log(age);
+}
 
-
+anyname();
+console.log(age); */
 
 
 
@@ -74,7 +79,32 @@ function third() {
 ///////////////////////////////////////
 // Lecture: The this keyword
 
+//console.log(this);
 
+var oriol = {
+    name: "Oriol",
+    year: 1988,
+    calculateAge: function(){
+        console.log(2019 - this.year);
+        console.log(this);
+
+/*         function innerfunction() {
+            console.log(this);
+        }
+        innerfunction(); */
+    }
+}
+
+var marta = {
+    name: marta,
+    year:1991
+}
+
+marta.calculateAge = oriol.calculateAge;
+
+marta.calculateAge();
+
+oriol.calculateAge();
 
 
 
